@@ -5,5 +5,5 @@ import { Component, Input } from 'angular2/core';
     templateUrl: './js/common/validation/components/validation-message/validation-message.component.html'
 })
 export class ValidationMessageComponent {
-    @Input() private message: string;
+    @Input() public message: string;
 }

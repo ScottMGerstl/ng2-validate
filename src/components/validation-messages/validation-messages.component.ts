@@ -9,8 +9,8 @@ import { ValidationMessage } from '../../models/validation-message.model';
     directives: [ValidationMessageComponent]
 })
 export class ValidationMessagesComponent {
-    @Input() private control: AbstractControl;
-    @Input() private exemptKeys: string[];
+    @Input() public control: AbstractControl;
+    @Input() public exemptKeys: string[];
 
     public get messages(): Array<ValidationMessage> {
         return this.filterMessages();
