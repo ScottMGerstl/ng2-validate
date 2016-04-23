@@ -1,7 +1,7 @@
 {
   "name": "ng2-validate",
   "version": "1.0.0",
-  "description": "a flexible validation library for angular2 that to help make your html error messages concise in your templates",
+  "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "main": "index.js",
   "scripts": {
     "build": "\"npm run clean\" && tsc",
