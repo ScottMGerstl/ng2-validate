@@ -1,6 +1,7 @@
+import 'reflect-metadata';
 import { expect } from 'chai';
 import { Control } from 'angular2/common';
-import { HasValue } from '../../src/logic/logics/hasValue.logic';
+import { HasValue } from '../../logic/logics/hasValue.logic';
 
 describe('hasValue', function() {
     it('should return false when the control value is undefined', function() {
