@@ -1,6 +1,6 @@
 {
   "name": "ng2-validate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "repository": {
     "type": "git",
