@@ -6,7 +6,7 @@ This is done by binding your control (containing a validator) to the validation-
 This is based off the [ValidatorFn](https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L51) interface defined by the beta-14 release. it will work with older versions of angular2 as long as it follows that same interface definition
 
 ##Example
-Here is a simple component that imports the validation-messsages component into the directives and creates a simple form with one control for email
+Here is a simple component that imports the validation-messages component into the directives and creates a simple form with one control for email
 (the specific implementation of the EmailValidation class is defined further in the documentation):
 ```javascript
 import { Component, OnInit } from 'angular2/core';
@@ -58,7 +58,7 @@ Bindings
 * **[exemptKeys]: string\[\] (optional)** - specify any validation keys you would not like to show in the list. This is not something you would commonly do but it is available if you want to display different errors for a control in different parts of the page
 
 ### **validation-message Component**
-This is the component that renders the actual message for each validation message. This is used by the list but can also be used independantly.
+This is the component that renders the actual message for each validation message. This is used by the list but can also be used independently.
 
 Bindings
 * **[message]: string** - the message to show
@@ -70,14 +70,14 @@ There are a couple built in models you can use depending on how you want to cons
 This model holds the information about the validation message.
 
 Properties
-* **text: string** - property to contain the human readble information about the validation error
+* **text: string** - property to contain the human readable information about the validation error
 * **context: any (optional)** - property to contain any information you want to supply with the validation message (such as the validation configuration for debugging and testing).
 
 ### **ValidationMessages.ts**
 This is a list model that represents a collection of ValidationMessage.
 
 Functions
-* **add(key, message, context?): void** adds a message to the colleaction
+* **add(key, message, context?): void** adds a message to the collection
     * **key: string** - the key that identifies the validation message (e.g. minLength)
     * **message: string** - the human readable text of the validation message
     * **context: any (optional)** - any information you want to add to the object for debugging or testing assertion
@@ -86,7 +86,7 @@ Functions
 
 ## Validation Logic
 These components are built so that you can use your favorite validation framework as long as the result of the validation lines up with angular's [ValidatorFn](https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L51).
-However, there are some built in validation logic classes that you can use; I referenced a couple in the component above.
+However, there are some built in validation logic classes that you can use; I referenced a couple in the upcoming control validation class.
 I will be adding to the logic classes over time and will definitely take pull requests to grow the available library of those logic files.
 
 Current available logic:
