@@ -6,11 +6,13 @@ This is done by binding your control (containing a validator) to the validation-
 This is based off the [ValidatorFn](https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L51) interface defined by the beta-14 release. it will work with older versions of angular2 as long as it follows that same interface definition
 
 ##Example
-Here is a simple component that imports the validation-messsages component into the directives and creates a simple form with one control:
+Here is a simple component that imports the validation-messsages component into the directives and creates a simple form with one control for email
+(the specific implementation of the EmailValidation class is defined further in the documentation):
 ```javascript
 import { Component, OnInit } from 'angular2/core';
 import { Control, ControlGroup } from 'angular2/common';
 import { ValidationMessagesComponent } from 'ng2-validate/core';
+import { EmailValidation } from './down/in/this/readme/email.validation.ts';
 
 @Component({
     directives: [ValidationMessagesComponent, ...]
@@ -18,19 +20,19 @@ import { ValidationMessagesComponent } from 'ng2-validate/core';
 })
 export class MyComponent implements OnInit{
     private myForm: ControlGroup;
-    private myControl: Control;
+    private emailControl: Control;
 
-    private something: string;
+    private email: string;
 
     public ngOnInit(): void {
-        this.myControl = new Control('', /*your validation here*/);
+        this.myControl = new Control('', new EmailValidation().validator);
 
         this.myForm = new ControlGroup({
-            myControl: this.myControl
+            emailControl: this.emailControl
         });
     }
 
-    private get shouldShowMessages(): boolean {
+    private get shouldShowMessages(control: Control): boolean {
         return /*you condition for showing the messages*/;
     }
 }
@@ -39,9 +41,9 @@ export class MyComponent implements OnInit{
 Here we have the simple template that uses the validation-messages component. The control is bound to it and the component will handle rendering out messages.
 ```html
 <div [ngFormModel]="myForm">
-    <label>Something</label>
-    <input [(ngFormControl)]="myControl" [(ngModel)]="something"/>
-    <validation-messages [control]="myControl" *ngIf="shouldShowMessages"></validation-messages>
+    <label>Email</label>
+    <input [(ngFormControl)]="emailControl" [(ngModel)]="email"/>
+    <validation-messages [control]="emailControl" *ngIf="shouldShowMessages(emailControl)"></validation-messages>
 </div>
 ```
 
