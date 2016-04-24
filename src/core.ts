@@ -1,4 +1,4 @@
-export { BaseValidation } from './base.validation';
+export { BaseValidation } from './models/base.validation';
 export { IFieldValidation } from './models/field-validation.interface';
 export { IFieldValidatorResult } from './models/field-validator-result.interface';
 export { ValidationMessage } from './models/validation-message.model';

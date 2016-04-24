@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
 import { AbstractControl, Control } from 'angular2/common';
-import { BaseValidation } from '../../base.validation';
+import { BaseValidation } from '../../models/base.validation';
 import { ValidationMessages } from '../../models/validation-messages.model';
 import { IFieldValidation } from '../../models/field-validation.interface';
 import { IFieldValidatorResult } from '../../models/field-validator-result.interface';
@@ -40,6 +40,19 @@ describe('ValidationMessagesComponent', function() {
         it('should accept a control', function() {
             component.control = new Control();
             expect(component.control).to.exist;
+        });
+    });
+
+    describe('@Input messageProperty', function() {
+        it('should accept a string', function() {
+            component.messageProperty = 'something';
+            component.ngOnInit();
+            expect(component.messageProperty).to.equal('something');
+        });
+
+        it('should default if not provided', function() {
+            component.ngOnInit();
+            expect(component.messageProperty).to.equal('text');
         });
     });
 

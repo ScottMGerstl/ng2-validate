@@ -11,7 +11,7 @@ import { ValidationMessage } from '../../models/validation-message.model';
 export class ValidationMessagesComponent implements OnInit {
     @Input() public control: AbstractControl;
     @Input() public exemptKeys: string[];
-    @Input() private messageProperty: string;
+    @Input() public messageProperty: string;
 
     public ngOnInit(): void {
         this.messageProperty = this.messageProperty || 'text';

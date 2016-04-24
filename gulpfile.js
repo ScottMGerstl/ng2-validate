@@ -16,10 +16,14 @@ gulp.task("build-app", function() {
 });
 
 gulp.task("istanbul:hook", function() {
+    // all js files except specs, modules, and shims for code coverage report
     return gulp.src([
         'dist/**/*.js',
-        '!dist/**/*.spec.js',
-        '!dist/**/*.module.js'])
+        '!dist/core.js',
+        '!dist/logic.js',
+        '!dist/**/*.module.js',
+        '!dist/**/shims/*.js',
+        '!dist/**/*.spec.js'])
         // Covering files
         .pipe(istanbul({
             includeUntested: true
