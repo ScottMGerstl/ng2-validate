@@ -19,8 +19,7 @@ gulp.task("istanbul:hook", function() {
     // all js files except specs, modules, and shims for code coverage report
     return gulp.src([
         'dist/**/*.js',
-        '!dist/core.js',
-        '!dist/logic.js',
+        '!dist/**/index.js',
         '!dist/**/*.module.js',
         '!dist/**/shims/*.js',
         '!dist/**/*.spec.js'])

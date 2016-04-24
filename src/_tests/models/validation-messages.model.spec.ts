@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
-import { ValidationMessage } from './../../models/validation-message.model';
-import { ValidationMessages } from './../../models/validation-messages.model';
-import { IFieldValidatorResult } from './../../models/field-validator-result.interface';
+import { ValidationMessage } from './../../core/models/validation-message.model';
+import { ValidationMessages } from './../../core/models/validation-messages.model';
+import { IFieldValidatorResult } from './../../core/models/field-validator-result.interface';
 
 describe('ValidationMessages', function() {
 

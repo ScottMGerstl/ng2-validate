@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
 import { AbstractControl, Control } from 'angular2/common';
-import { BaseValidation } from '../models/base.validation';
-import { ValidationMessage } from '../models/validation-message.model';
-import { ValidationMessages } from '../models/validation-messages.model';
-import { IFieldValidation } from '../models/field-validation.interface';
-import { IFieldValidatorResult } from '../models/field-validator-result.interface';
+import { BaseValidation } from '../core/models/base.validation';
+import { ValidationMessage } from '../core/models/validation-message.model';
+import { ValidationMessages } from '../core/models/validation-messages.model';
+import { IFieldValidation } from '../core/models/field-validation.interface';
+import { IFieldValidatorResult } from '../core/models/field-validator-result.interface';
 
 class ValidationFak extends BaseValidation<IBaseValidationFakeConfig> implements IFieldValidation {
     constructor(config?: IBaseValidationFakeConfig) {

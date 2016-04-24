@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
-import { ValidationMessageComponent } from './../../components/validation-message/validation-message.component';
+import { ValidationMessageComponent } from './../../core/components/validation-message/validation-message.component';
 
 describe('ValidationMessageComponent', function() {
 
