@@ -16,9 +16,14 @@ gulp.task("build-app", function() {
 });
 
 gulp.task("istanbul:hook", function() {
-    return gulp.src(['dist/**/*.js', '!dist/**/*.spec.js'])
+    return gulp.src([
+        'dist/**/*.js',
+        '!dist/**/*.spec.js',
+        '!dist/**/*.module.js'])
         // Covering files
-        .pipe(istanbul())
+        .pipe(istanbul({
+            includeUntested: true
+        }))
         // Force `require` to return covered files
         .pipe(istanbul.hookRequire());
 });

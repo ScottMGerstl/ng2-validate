@@ -12,7 +12,7 @@ describe('isPattern', function() {
         let control: Control = new Control();
         control.updateValue('a');
 
-        let sut: boolean = IsPattern.execute(control, new RegExp('[A-Z]'));
+        let sut: boolean = IsPattern.check(control, new RegExp('[A-Z]'));
         expect(sut).eql(false);
     });
 
@@ -20,7 +20,7 @@ describe('isPattern', function() {
         let control: Control = new Control();
         control.updateValue('A');
 
-        let sut: boolean = IsPattern.execute(control, new RegExp('[A-Z]'));
+        let sut: boolean = IsPattern.check(control, new RegExp('[A-Z]'));
         expect(sut).eql(true);
     });
 
@@ -28,13 +28,13 @@ describe('isPattern', function() {
         let control: Control = new Control();
         control.updateValue(undefined);
 
-        expect(IsPattern.execute.bind(control, 2)).to.throw();
+        expect(IsPattern.check.bind(control, 2)).to.throw();
     });
 
     it('should throw Error when the control is null', function() {
         let control: Control = new Control();
         control.updateValue(null);
 
-        expect(IsPattern.execute.bind(control, 2)).to.throw();
+        expect(IsPattern.check.bind(control, 2)).to.throw();
     });
 });

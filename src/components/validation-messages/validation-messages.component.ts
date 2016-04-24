@@ -1,4 +1,4 @@
-import { Component, Input } from 'angular2/core';
+import { Component, Input, OnInit } from 'angular2/core';
 import { AbstractControl } from 'angular2/common';
 import { ValidationMessageComponent } from './../validation-message/validation-message.component';
 import { ValidationMessage } from '../../models/validation-message.model';
@@ -8,9 +8,14 @@ import { ValidationMessage } from '../../models/validation-message.model';
     templateUrl: './js/common/validation/components/validation-messages/validation-messages.component.html',
     directives: [ValidationMessageComponent]
 })
-export class ValidationMessagesComponent {
+export class ValidationMessagesComponent implements OnInit {
     @Input() public control: AbstractControl;
     @Input() public exemptKeys: string[];
+    @Input() private messageProperty: string;
+
+    public ngOnInit(): void {
+        this.messageProperty = this.messageProperty || 'text';
+    }
 
     public get messages(): Array<ValidationMessage> {
         return this.filterMessages();

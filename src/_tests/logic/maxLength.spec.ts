@@ -12,7 +12,7 @@ describe('maxLength', function() {
         let control: Control = new Control();
         control.updateValue('1');
 
-        let sut: boolean = MaxLength.execute(control, 2);
+        let sut: boolean = MaxLength.check(control, 2);
         expect(sut).eql(true);
     });
 
@@ -20,7 +20,7 @@ describe('maxLength', function() {
         let control: Control = new Control();
         control.updateValue('12');
 
-        let sut: boolean = MaxLength.execute(control, 2);
+        let sut: boolean = MaxLength.check(control, 2);
         expect(sut).eql(true);
     });
 
@@ -28,7 +28,7 @@ describe('maxLength', function() {
         let control: Control = new Control();
         control.updateValue('123');
 
-        let sut: boolean = MaxLength.execute(control, 2);
+        let sut: boolean = MaxLength.check(control, 2);
         expect(sut).eql(false);
     });
 
@@ -36,13 +36,13 @@ describe('maxLength', function() {
         let control: Control = new Control();
         control.updateValue(undefined);
 
-        expect(MaxLength.execute.bind(control, 2)).to.throw();
+        expect(MaxLength.check.bind(control, 2)).to.throw();
     });
 
     it('should throw Error when the control is null', function() {
         let control: Control = new Control();
         control.updateValue(null);
 
-        expect(MaxLength.execute.bind(control, 2)).to.throw();
+        expect(MaxLength.check.bind(control, 2)).to.throw();
     });
 });

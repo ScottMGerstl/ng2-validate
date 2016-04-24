@@ -12,7 +12,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue(undefined);
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(false);
     });
 
@@ -20,7 +20,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue(null);
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(false);
     });
 
@@ -28,7 +28,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue('');
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(false);
     });
 
@@ -36,7 +36,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue('   ');
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(false);
     });
 
@@ -44,7 +44,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue('im a teapot');
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(true);
     });
 
@@ -52,7 +52,7 @@ describe('hasValue', function() {
         let control: Control = new Control();
         control.updateValue(42);
 
-        let sut: boolean = HasValue.execute(control);
+        let sut: boolean = HasValue.check(control);
         expect(sut).eql(true);
     });
 });
