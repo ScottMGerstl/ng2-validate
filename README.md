@@ -55,7 +55,7 @@ This is the collection level component for rendering out any number of messages 
 Bindings
 * **[control]: AbstractControl** - specify a control, who's messages the instance should display.
 * **[messageProperty]: string (optional | default = "text")** - specify a key in the message object to access for the message text.
-* **[exemptKeys]: string[] (optional)** - specify any validation keys you would not like to show in the list. This is not something you would commonly do but it is available if you want to display different errors for a control in different parts of the page
+* **[exemptKeys]: string\[\] (optional)** - specify any validation keys you would not like to show in the list. This is not something you would commonly do but it is available if you want to display different errors for a control in different parts of the page
 
 ### **validation-message Component**
 This is the component that renders the actual message for each validation message. This is used by the list but can also be used independantly.
