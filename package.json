@@ -1,6 +1,6 @@
 {
   "name": "ng2-validate",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.0",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "repository": {
     "type": "git",
@@ -26,11 +26,11 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.3.2",
     "gulp-istanbul": "^0.10.4",
     "gulp-mocha": "^2.2.0",
     "gulp-typescript": "^2.13.0",
-    "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }
 }

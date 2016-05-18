@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
 import { Control } from 'angular2/common';
-import { MaxLength } from '../../logic/logics/maxLength.logic';
+import { MaxLength } from '../../logic/logics/length/maxLength.logic';
 
 describe('maxLength', function() {
     it('should exist', function() {
