@@ -31,10 +31,6 @@ export class MyComponent implements OnInit{
             emailControl: this.emailControl
         });
     }
-
-    private get shouldShowMessages(control: Control): boolean {
-        return /*you condition for showing the messages*/;
-    }
 }
 ```
 
@@ -43,7 +39,7 @@ Here we have the simple template that uses the validation-messages component. Th
 <div [ngFormModel]="myForm">
     <label>Email</label>
     <input [(ngFormControl)]="emailControl" [(ngModel)]="email"/>
-    <validation-messages [control]="emailControl" *ngIf="shouldShowMessages(emailControl)"></validation-messages>
+    <validation-messages [control]="emailControl"></validation-messages>
 </div>
 ```
 
@@ -91,8 +87,17 @@ I will be adding to the logic classes over time and will definitely take pull re
 
 Current available logic:
 * **HasValue.check(control: AbstractControl): boolean** - determines if a control contains a value
+
+* **IsNumeric.check(control: AbstractControl): boolean** - determines if a control value's is numeric (e.g. -1, 0, 42, -3.5, 9.9)
+* **Max.check(control: AbstractControl, max: number): boolean** - determines if a control value is less than or equal to the max provided
+* **Min.check(control: AbstractControl, min: number): boolean** - determines if a control value is greater than or equal to the min provided
+* **Range.check(control: AbstractControl, min: number, max: number): boolean** - determines if a control value is within or equal to the min and max provided
+
 * **MaxLength.check(control: AbstractControl, maxLength: number): boolean** - determines if a control value's length is less than or equal to the maxLength provided
 * **MinLength.check(control: AbstractControl, minLength: number): boolean** - determines if a control value's length is greater than or equal to the minLength provided
+* **Length.check(control: AbstractControl, minLength: number, maxLength: number): boolean** - determines if a control value's length is within or equal to the minLength and maxLength provided
+* **IsLength.check(control: AbstractControl, length: number): boolean** - determines if a control value's length is equal to the length provided
+
 * **IsPattern.check(control: AbstractControl, pattern: RegExp): boolean** - determines if a control's value passes the RegExp.test() method
 * **IsEmail.check(control: AbstractControl): boolean** - determines if a control's value looks similar to an email
 
