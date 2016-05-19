@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 import { IsPattern } from './IsPattern.logic';
 
 export class IsEmail {

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
-import { Control } from 'angular2/common';
+import { Control } from '@angular/common';
 import { Length } from '../../logic/logics/length/length.logic';
 
 describe('length', function() {

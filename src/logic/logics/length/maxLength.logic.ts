@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 
 export class MaxLength {
      public static check(control: AbstractControl, maxLength: number): boolean {
