@@ -11,6 +11,12 @@ Working on getting it into npm.
 
 Copy core.ts, logic.ts, and the contents of the core and logic folders into a folder in your solution (for this demo, its copied into a folder called ng2-validate).
 
+## Importing
+
+Working on getting it into npm.
+
+Copy core.ts, logic.ts, and the contents of the core and logic folders into a folder in your solution (for this demo, its copied into a folder called ng2-validate).
+
 ##Example
 Here is a simple component that imports the validation-messages component into the directives and creates a simple form with one control for email
 (the specific implementation of the EmailValidation class is defined further in the documentation):
