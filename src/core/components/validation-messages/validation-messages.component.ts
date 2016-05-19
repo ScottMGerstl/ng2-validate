@@ -5,7 +5,11 @@ import { ValidationMessage } from '../../models/validation-message.model';
 
 @Component({
     selector: 'validation-messages',
-    templateUrl: './js/common/validation/components/validation-messages/validation-messages.component.html',
+    template: `
+    <div *ngIf="messages" *ngFor="#message of messages">
+        <validation-message *ngIf="message" [message]="message[messageProperty]"></validation-message>
+    </div>
+`,
     directives: [ValidationMessageComponent]
 })
 export class ValidationMessagesComponent implements OnInit {
