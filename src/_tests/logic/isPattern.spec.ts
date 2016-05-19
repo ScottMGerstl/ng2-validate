@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
-import { Control } from 'angular2/common';
+import { Control } from '@angular/common';
 import { IsPattern } from '../../logic/logics/patterns/isPattern.logic';
 
 describe('isPattern', function() {

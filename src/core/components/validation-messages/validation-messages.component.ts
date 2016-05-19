@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from 'angular2/core';
-import { AbstractControl } from 'angular2/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/common';
 import { ValidationMessageComponent } from './../validation-message/validation-message.component';
 import { ValidationMessage } from '../../models/validation-message.model';
 
@@ -8,8 +8,8 @@ import { ValidationMessage } from '../../models/validation-message.model';
     template: `
     <div *ngIf="messages" *ngFor="#message of messages">
         <validation-message *ngIf="message" [message]="message[messageProperty]"></validation-message>
-    </div>
-`,
+    </div>`
+    ,
     directives: [ValidationMessageComponent]
 })
 export class ValidationMessagesComponent implements OnInit {

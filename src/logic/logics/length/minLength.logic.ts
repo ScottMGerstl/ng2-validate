@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 
 export class MinLength {
      public static check(control: AbstractControl, minLength: number): boolean {

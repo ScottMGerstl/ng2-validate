@@ -3,7 +3,13 @@
 a collection of classes and components to slim down your component templates for handling error messages on your form.
 This is done by binding your control (containing a validator) to the validation-messages component.
 
-This is based off the [ValidatorFn](https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L51) interface defined by the beta-14 release. it will work with older versions of angular2 as long as it follows that same interface definition
+This is based off the ValidatorFn interface defined by the beta-14 release. it will work with older versions of angular2 as long as it follows that same interface definition
+
+##Importing
+
+Working on getting it into npm.
+
+Copy core.ts, logic.ts, and the contents of the core and logic folders into a folder in your solution (for this demo, its copied into a folder called ng2-validate).
 
 ## Importing
 
@@ -15,8 +21,8 @@ Copy core.ts, logic.ts, and the contents of the core and logic folders into a fo
 Here is a simple component that imports the validation-messages component into the directives and creates a simple form with one control for email
 (the specific implementation of the EmailValidation class is defined further in the documentation):
 ```javascript
-import { Component, OnInit } from 'angular2/core';
-import { Control, ControlGroup } from 'angular2/common';
+import { Component, OnInit } from '@angular/core';
+import { Control, ControlGroup } from '@angular/common';
 import { ValidationMessagesComponent } from 'ng2-validate/core';
 import { EmailValidation } from './down/in/this/readme/email.validation.ts';
 
@@ -37,10 +43,6 @@ export class MyComponent implements OnInit{
             emailControl: this.emailControl
         });
     }
-
-    private get shouldShowMessages(control: Control): boolean {
-        return /*you condition for showing the messages*/;
-    }
 }
 ```
 
@@ -49,7 +51,7 @@ Here we have the simple template that uses the validation-messages component. Th
 <div [ngFormModel]="myForm">
     <label>Email</label>
     <input [(ngFormControl)]="emailControl" [(ngModel)]="email"/>
-    <validation-messages [control]="emailControl" *ngIf="shouldShowMessages(emailControl)"></validation-messages>
+    <validation-messages [control]="emailControl"></validation-messages>
 </div>
 ```
 
@@ -91,14 +93,23 @@ Functions
 * **resolve(): ValidationMessages** - if there are messages, it returns them; if not, it returns null so truthy in html evaluates to false
 
 ## Validation Logic
-These components are built so that you can use your favorite validation framework as long as the result of the validation lines up with angular's [ValidatorFn](https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L51).
+These components are built so that you can use your favorite validation framework as long as the result of the validation lines up with angular's ValidatorFn.
 However, there are some built in validation logic classes that you can use; I referenced a couple in the upcoming control validation class.
 I will be adding to the logic classes over time and will definitely take pull requests to grow the available library of those logic files.
 
 Current available logic:
 * **HasValue.check(control: AbstractControl): boolean** - determines if a control contains a value
+
+* **IsNumeric.check(control: AbstractControl): boolean** - determines if a control value's is numeric (e.g. -1, 0, 42, -3.5, 9.9)
+* **Max.check(control: AbstractControl, max: number): boolean** - determines if a control value is less than or equal to the max provided
+* **Min.check(control: AbstractControl, min: number): boolean** - determines if a control value is greater than or equal to the min provided
+* **Range.check(control: AbstractControl, min: number, max: number): boolean** - determines if a control value is within or equal to the min and max provided
+
 * **MaxLength.check(control: AbstractControl, maxLength: number): boolean** - determines if a control value's length is less than or equal to the maxLength provided
 * **MinLength.check(control: AbstractControl, minLength: number): boolean** - determines if a control value's length is greater than or equal to the minLength provided
+* **Length.check(control: AbstractControl, minLength: number, maxLength: number): boolean** - determines if a control value's length is within or equal to the minLength and maxLength provided
+* **IsLength.check(control: AbstractControl, length: number): boolean** - determines if a control value's length is equal to the length provided
+
 * **IsPattern.check(control: AbstractControl, pattern: RegExp): boolean** - determines if a control's value passes the RegExp.test() method
 * **IsEmail.check(control: AbstractControl): boolean** - determines if a control's value looks similar to an email
 
@@ -108,8 +119,8 @@ Here is a suggested way to design your validation as it gives the view model con
 There are out of the box classes and interfaces *(explained in the snippet)* you can make use of to make building control validators easier and quicker.
 
 ```javascript
-import { Injectable } from 'angular2/core';
-import { AbstractControl } from 'angular2/common';
+import { Injectable } from '@angular/core';
+import { AbstractControl } from '@angular/common';
 import { BaseValidation, ValidationMessages, IFieldValidation, IFieldValidatorResult } from 'ng2-validate/core';
 import { HasValue, IsEmail, MaxLength } from 'ng2-validate/logic';
 

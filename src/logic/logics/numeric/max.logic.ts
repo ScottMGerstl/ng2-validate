@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 
 export class Max {
      public static check(control: AbstractControl, max: number): boolean {
