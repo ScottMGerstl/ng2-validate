@@ -1,8 +1,8 @@
 // import * as zone from 'zone.js';
-// import {global, FunctionWrapper, isPresent, Type} from 'angular2/src/facade/lang';
-// import {ListWrapper} from 'angular2/src/facade/collection';
-// import {Injector, Provider, PLATFORM_INITIALIZER} from 'angular2/core';
-// import {BaseException} from 'angular2/src/facade/exceptions';
+// import {global, FunctionWrapper, isPresent, Type} from '@angular/src/facade/lang';
+// import {ListWrapper} from '@angular/src/facade/collection';
+// import {Injector, Provider, PLATFORM_INITIALIZER} from '@angular/core';
+// import {BaseException} from '@angular/src/facade/exceptions';
 // import * as chai from 'chai';
 
 // let _global: any = <any>(typeof window === 'undefined' ? global :  window);

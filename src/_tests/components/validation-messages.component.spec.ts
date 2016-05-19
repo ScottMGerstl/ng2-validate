@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { expect } from 'chai';
-import { AbstractControl, Control } from 'angular2/common';
+import { AbstractControl, Control } from '@angular/common';
 import { BaseValidation } from '../../core/models/base.validation';
 import { ValidationMessages } from '../../core/models/validation-messages.model';
 import { IFieldValidation } from '../../core/models/field-validation.interface';

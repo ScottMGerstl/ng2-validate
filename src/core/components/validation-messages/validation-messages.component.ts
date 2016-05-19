@@ -1,11 +1,15 @@
-import { Component, Input, OnInit } from 'angular2/core';
-import { AbstractControl } from 'angular2/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/common';
 import { ValidationMessageComponent } from './../validation-message/validation-message.component';
 import { ValidationMessage } from '../../models/validation-message.model';
 
 @Component({
     selector: 'validation-messages',
-    templateUrl: './js/common/validation/components/validation-messages/validation-messages.component.html',
+    template: `
+    <div *ngIf="messages" *ngFor="#message of messages">
+        <validation-message *ngIf="message" [message]="message[messageProperty]"></validation-message>
+    </div>`
+    ,
     directives: [ValidationMessageComponent]
 })
 export class ValidationMessagesComponent implements OnInit {

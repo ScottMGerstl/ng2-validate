@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 
 export class IsNumeric {
      public static check(control: AbstractControl): boolean {

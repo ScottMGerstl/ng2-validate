@@ -1,5 +1,5 @@
-import { AbstractControl } from 'angular2/common';
-import { isBlank, isString } from 'angular2/src/facade/lang';
+import { AbstractControl } from '@angular/common';
+import { isBlank, isString } from '@angular/core/src/facade/lang';
 
 export class HasValue {
      public static check(control: AbstractControl): boolean {

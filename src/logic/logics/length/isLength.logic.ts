@@ -1,4 +1,4 @@
-import { AbstractControl } from 'angular2/common';
+import { AbstractControl } from '@angular/common';
 
 export class IsLength {
      public static check(control: AbstractControl, length: number): boolean {
