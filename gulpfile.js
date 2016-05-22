@@ -5,7 +5,8 @@ var gulp        = require("gulp"),
 gulp.task("istanbul:hook", function() {
     // all js files except specs, modules, and shims for code coverage report
     return gulp.src([
-        'src/**/*.js'])
+        'src/**/*.js',
+        '!src/**/main.js'])
         // Covering files
         .pipe(istanbul({
             includeUntested: true

@@ -3,9 +3,9 @@
   "version": "0.1.0-alpha.1",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "scripts": {
-    "compile": "npm run tsc",
-    "build": "npm run clean && npm run typings && npm run lint && npm run bundle",
-    "clean": "rimraf ./bundles/ ./core/ ./logic/",
+    "build": "npm run clean && npm run typings && npm run lint && npm run tsc && npm run bundle",
+    "clean": "rimraf ./bundles/ ./core/ ./logic/ && npm run clean-src",
+    "clean-src": "rimraf ./src/**/*.js",
     "typings": "typings install",
     "lint": "tslint ./src/**/*.ts",
     "tsc": "tsc --project . --declaration",
@@ -13,7 +13,8 @@
     "tsc-single": "tsc --project . --rootDir ./src --module system --outFile ./bundles/ng2-validate.js",
     "uglify": "uglifyjs ./bundles/ng2-validate.js --output ./bundles/ng2-validate.min.js",
     "postinstall": "npm run build",
-    "test": "npm run build && gulp test"
+    "build-tests": "tsc --project ./tests",
+    "test": "gulp test"
   },
   "author": "Scott M Gerstl <scott.gerstl@outlook.com>",
   "license": "ISC",
