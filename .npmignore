@@ -1,6 +1,8 @@
 /coverage
 /node_modules
 /src
-
+/tests
+.gitignore
+README.md
 tsconfig.js
 tslint.json

@@ -1,39 +1,52 @@
 {
   "name": "ng2-validate",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
+  "scripts": {
+    "compile": "npm run tsc",
+    "build": "npm run clean && npm run typings && npm run lint && npm run bundle",
+    "clean": "rimraf ./bundles/ ./core/ ./logic/",
+    "typings": "typings install",
+    "lint": "tslint ./src/**/*.ts",
+    "tsc": "tsc --project . --declaration",
+    "bundle": "npm run tsc-single && npm run uglify",
+    "tsc-single": "tsc --project . --rootDir ./src --module system --outFile ./bundles/ng2-validate.js",
+    "uglify": "uglifyjs ./bundles/ng2-validate.js --output ./bundles/ng2-validate.min.js",
+    "postinstall": "npm run build",
+    "test": "npm run build && gulp test"
+  },
+  "author": "Scott M Gerstl <scott.gerstl@outlook.com>",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/ScottMGerstl/ng2-validate.git"
   },
-  "scripts": {
-    "build": "\"npm run clean\" && tsc",
-    "test": "\"npm run build\" && gulp test-clean",
-    "postinstall": "typings install",
-    "prepublish": "\"npm run build\" && gulp clean-spec",
-    "clean": "gulp clean-dist",
-    "typings": "typings"
-  },
-  "author": "Scott M Gerstl <scott.gerstl@outlook.com>",
-  "license": "MIT",
+  "keywords": [
+    "ng2",
+    "angular2",
+    "validate",
+    "validation",
+    "component"
+  ],
   "peerDependencies": {
     "@angular/common": "^2.0.0-rc.1",
     "@angular/core": "^2.0.0-rc.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "gulp": "^3.9.1",
     "@angular/common": "^2.0.0-rc.1",
     "@angular/core": "^2.0.0-rc.1",
-    "gulp-browserify": "^0.5.1",
-    "gulp-clean": "^0.3.2",
+    "chai": "^3.5.0",
+    "es6-shim": "^0.35.0",
+    "gulp": "^3.9.1",
     "gulp-istanbul": "^0.10.4",
     "gulp-mocha": "^2.2.0",
-    "gulp-typescript": "^2.13.0",
-    "typings": "^0.8.1",
-    "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
+    "rimraf": "^2.5.2",
     "rxjs": "5.0.0-beta.6",
+    "tslint": "^3.7.1",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "uglify-js": "^2.6.2",
     "zone.js": "0.6.10"
   }
 }

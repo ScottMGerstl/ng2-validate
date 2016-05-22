@@ -1,6 +1,8 @@
+bundles/
+core/
 coverage/
-dist/
+logic/
 node_modules/
+src/**/*.js
+tests/**/*.js
 typings/
-core.js
-logic.js
