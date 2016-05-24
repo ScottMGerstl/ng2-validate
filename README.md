@@ -26,7 +26,7 @@ export class MyComponent implements OnInit{
     private email: string;
 
     public ngOnInit(): void {
-        this.myControl = new Control('', new EmailValidation().validator);
+        this.emailControl = new Control('', new EmailValidation().validator);
 
         this.myForm = new ControlGroup({
             emailControl: this.emailControl
