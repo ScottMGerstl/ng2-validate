@@ -1,6 +1,6 @@
 {
   "name": "ng2-validate",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "scripts": {
     "build": "npm run clean && npm run typings && npm run lint && npm run tsc && npm run bundle",
@@ -12,7 +12,6 @@
     "bundle": "npm run tsc-single && npm run uglify",
     "tsc-single": "tsc --project . --rootDir ./src --module system --outFile ./bundles/ng2-validate.js",
     "uglify": "uglifyjs ./bundles/ng2-validate.js --output ./bundles/ng2-validate.min.js",
-    "postinstall": "npm run build",
     "build-tests": "tsc --project ./tests",
     "test": "gulp test"
   },
