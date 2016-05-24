@@ -1,6 +1,14 @@
 /coverage
 /node_modules
 /src
-
-tsconfig.js
+/tests
+/typings
+.gitignore
+.npmignore
+gulpfile.js
+LICENSE.md
+package.json
+README.md
+tsconfig.json
 tslint.json
+typings.json
