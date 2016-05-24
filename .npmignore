@@ -2,7 +2,13 @@
 /node_modules
 /src
 /tests
+/typings
 .gitignore
+.npmignore
+gulpfile.js
+LICENSE.md
+package.json
 README.md
 tsconfig.js
 tslint.json
+typings.json

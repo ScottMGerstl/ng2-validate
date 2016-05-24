@@ -1,6 +1,6 @@
 {
   "name": "ng2-validate",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "description": "a flexible validation library for angular2 that slims your html error messages into a one-line component included in your templates",
   "scripts": {
     "build": "npm run clean && npm run typings && npm run lint && npm run tsc && npm run bundle",
