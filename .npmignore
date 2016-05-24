@@ -9,6 +9,6 @@ gulpfile.js
 LICENSE.md
 package.json
 README.md
-tsconfig.js
+tsconfig.json
 tslint.json
 typings.json
