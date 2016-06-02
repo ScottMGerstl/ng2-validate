@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormComponent } from './form.component';
 
 @Component({
     selector: 'demo-app',
-    template: '<div>Hi demo</div>'
+    template: '<email-form></email-form>'
 })
 export class AppComponent {
 }
