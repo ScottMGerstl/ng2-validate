@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Control, ControlGroup } from '@angular/common';
-import { ValidationMessagesComponent } from '../core';
+import { ValidationMessagesComponent } from '../src/core';
 import { EmailValidation } from './email.validator';
 
 @Component({
