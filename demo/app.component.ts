@@ -1,22 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-// import { ROUTER_DIRECTIVES, Routes, Router } from '@angular/router';
-// import { ModalDemoComponent } from './modal-demo.component';
-// import { HelloComponent } from './hello.component';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'modal-demo',
-    template: 'Hi demo'//,
-    // directives: [ROUTER_DIRECTIVES]
+    selector: 'demo-app',
+    template: '<div>Hi demo</div>'
 })
-// @Routes([
-//     { path: '/', component: ModalDemoComponent },
-//     { path: '/hello', component: HelloComponent }
-// ])
-export class AppComponent implements OnInit {
-
-    // constructor(private router: Router) { }
-
-    ngOnInit() {
-        // this.router.navigate(['/']);
-    }
+export class AppComponent {
 }
