@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/common';
-import { ValidationMessages, IFieldValidation, IFieldValidatorResult } from '../src/core';
+import { BaseValidation, ValidationMessages, IFieldValidation, IFieldValidatorResult } from '../src/core';
 import { HasValue, IsEmail, MaxLength } from '../src/logic';
-import { BaseValidation } from '../src/core/models/base.validation';
 
 // define an interface for configuration
 export interface IEmailValidationConfig {
