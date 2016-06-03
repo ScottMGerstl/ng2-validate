@@ -1,4 +1,4 @@
-export abstract class BaseValidation<ConfigT> {
+export class BaseValidation<ConfigT> {
 
     public config: ConfigT;
     public getDefaultConfig(): ConfigT {
