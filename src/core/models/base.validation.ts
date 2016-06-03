@@ -1,7 +1,9 @@
-export abstract class BaseValidation<ConfigT> {
+export class BaseValidation<ConfigT> {
 
     public config: ConfigT;
-    public abstract getDefaultConfig(): ConfigT;
+    public getDefaultConfig(): ConfigT {
+        return null;
+    }
 
     constructor(config: ConfigT) {
         if (!config) {
