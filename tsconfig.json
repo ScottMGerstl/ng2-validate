@@ -16,6 +16,9 @@
         "node_modules",
         "typings/main.d.ts",
         "typings/main",
-        "tests"
+        "tests",
+        "demo",
+        "bundles",
+        "coverage"
     ]
 }

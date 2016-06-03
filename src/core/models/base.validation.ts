@@ -1,7 +1,9 @@
-export abstract class BaseValidation<ConfigT> {
+export class BaseValidation<ConfigT> {
 
     public config: ConfigT;
-    public abstract getDefaultConfig(): ConfigT;
+    public getDefaultConfig(): ConfigT {
+        throw new Error('This must be implemented to use this class');
+    }
 
     constructor(config: ConfigT) {
         if (!config) {

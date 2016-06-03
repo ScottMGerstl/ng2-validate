@@ -6,7 +6,7 @@ import { ValidationMessage } from '../../models/validation-message.model';
 @Component({
     selector: 'validation-messages',
     template: `
-    <div *ngIf="messages" *ngFor="#message of messages">
+    <div *ngIf="messages" *ngFor="let message of messages">
         <validation-message *ngIf="message" [message]="message[messageProperty]"></validation-message>
     </div>`
     ,

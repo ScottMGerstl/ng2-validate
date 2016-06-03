@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ng2-validate demo</title>
+    <base href="/ng2-validate/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.27/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.10/lib/typescript.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+
+    <script>
+      System.config({
+        baseURL: '/ng2-validate/',
+        transpiler: 'typescript',
+        typescriptOptions: {
+            emitDecoratorMetadata: true,
+            experimentalDecorators: true
+        },
+        packages: {
+            '@angular/common': {main: 'index.js', defaultExtension: 'js'},
+            '@angular/compiler': {main: 'index.js', defaultExtension: 'js'},
+            '@angular/core': {main: 'index.js', defaultExtension: 'js'},
+            '@angular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
+            '@angular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
+            '@angular/router': {main: 'index.js', defaultExtension: 'js'},
+            'rxjs': { defaultExtension: 'js' },
+            'src': {defaultExtension: 'ts'},
+            'demo': {main: 'main', defaultExtension: 'ts'}
+        },
+        map: {
+            '@angular/common': 'https://npmcdn.com/@angular/common@2.0.0-rc.1',
+            '@angular/compiler': 'https://npmcdn.com/@angular/compiler@2.0.0-rc.1',
+            '@angular/core': 'https://npmcdn.com/@angular/core@2.0.0-rc.1',
+            '@angular/platform-browser': 'https://npmcdn.com/@angular/platform-browser@2.0.0-rc.1',
+            '@angular/platform-browser-dynamic': 'https://npmcdn.com/@angular/platform-browser-dynamic@2.0.0-rc.1',
+            '@angular/router': 'https://npmcdn.com/@angular/router@2.0.0-rc.1',
+            'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6'
+        }
+      });
+      System.import('demo').catch(function(err){
+          console.error(err);
+      });
+    </script>
+</head>
+<body>
+
+    <demo-app></demo-app>
+
+</body>
+</html>
