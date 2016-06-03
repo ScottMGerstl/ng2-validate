@@ -1,5 +1,5 @@
 import { AbstractControl } from '@angular/common';
-import { IsPattern } from './IsPattern.logic';
+import { IsPattern } from './isPattern.logic';
 
 export class IsEmail {
     public static check(control: AbstractControl) {
